@@ -1,0 +1,43 @@
+type Student{
+	id:ID!
+	name:String
+	bookId:String
+}
+
+
+type StudentDto{
+	id:String
+	name:String
+	book:Book
+}
+
+input StudentInput{
+	name:String
+	bookId:String	
+}
+
+
+type Book {
+	id:ID!
+	title:String
+	desc:String
+	author:String
+	price:Float
+	pages:Int
+}
+
+
+
+type Mutation{
+	addStudent(student:StudentInput):Student
+	deleteStudent(id:String):Boolean
+}
+
+type Query {
+	allStudents:[Student]
+	getStudent(id:String):StudentDto
+}
+
+
+
+
